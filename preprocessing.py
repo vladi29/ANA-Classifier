@@ -10,9 +10,38 @@ from torch.utils.data import DataLoader
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import os
+from natsort import os_sorted
+import cv2
+import random
 
-data_path = r"C:/Users/Usuario/OneDrive/Escritorio/Tesis/Datasets/AIDA_HEp-2_DB_publico/AIDA_HEp-2_GroundTruth.xls"
-data = pd.read_csv(data_path, on_bad_lines = 'skip')
-print(data)
+images_path = 'C:/Users/Usuario/OneDrive/Escritorio/Tesis/Datasets/AIDA_HEp-2_DB_publico/aida_project_database'
+labels_path = 'C:/Users/Usuario/OneDrive/Escritorio/Tesis/Datasets/AIDA_HEp-2_DB_publico/AIDA_HEp-2_GroundTruth.xlsx'
 
+data = pd.read_excel(labels_path)
+labels_list = data['StainingPatterns'].values.tolist()
+images = data['ImageFileName'].values.tolist()
 
+aux = ''
+patterns = {}
+for pattern in labels_list:
+    if pattern != aux:
+        patterns[pattern] = labels_list.count(pattern)
+        aux = pattern
+    else:
+        continue
+print(patterns)
+print('Numero de patrones en el dataset: ', len(patterns))
+
+images_list = []
+for image in images:
+    image_path = images_path + '/' + image
+    image = cv2.imread(image_path)
+    image = (image/255).astype('float32')
+    image = cv2.resize(image, (100, 100))
+    images_list.append(image)
+
+random_image = random.randint(0, 2080)
+plt.imshow(images_list[random_image])
+plt.show()
+print('Clase: ', labels_list[random_image])
