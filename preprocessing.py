@@ -30,18 +30,20 @@ for pattern in labels_list:
         aux = pattern
     else:
         continue
-print(patterns)
+#print(patterns)
 print('Numero de patrones en el dataset: ', len(patterns))
 
 images_list = []
 for image in images:
+    print(image)
     image_path = images_path + '/' + image
     image = cv2.imread(image_path)
     image = (image/255).astype('float32')
-    image = cv2.resize(image, (100, 100))
+    image = cv2.resize(image, (100, 75))
     images_list.append(image)
 
-random_image = random.randint(0, 2080)
+random_image = random.randint(0, 2079)
+
+print('Nombre: ', images[random_image])
 plt.imshow(images_list[random_image])
 plt.show()
-print('Clase: ', labels_list[random_image])
