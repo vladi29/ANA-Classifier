@@ -11,7 +11,7 @@ from natsort import os_sorted
 import cv2
 import random
 
-def preproccessing_training(Labels_path, Images_path):
+def preprocessing_training(Labels_path, Images_path):
 
     data = pd.read_excel(Labels_path)
     labels_list = data['StainingPatterns'].values.tolist()
