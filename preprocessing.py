@@ -26,16 +26,16 @@ def preprocessing_training(Labels_path, Images_path):
         image = cv2.resize(image, (100, 75))
         images_list.append(image)
 
-    return labels_list, images_list, images
-
     #-----------Obtener la cantidad de labels-----------
-    # aux = ''
-    # patterns = {}
-    # for pattern in labels_list:
-    #     if pattern != aux:
-    #         patterns[pattern] = labels_list.count(pattern)
-    #         aux = pattern
-    #     else:
-    #         continue
-    # #print(patterns)
-    # print('Numero de patrones en el dataset: ', len(patterns))
+    aux = ''
+    patterns = {}
+    for pattern in labels_list:
+        if pattern != aux:
+            patterns[pattern] = labels_list.count(pattern)
+            aux = pattern
+        else:
+            continue
+    #print(patterns)
+    print('Numero de patrones en el dataset: ', len(patterns))
+
+    return labels_list, images_list, images
