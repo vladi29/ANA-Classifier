@@ -10,6 +10,8 @@ import cv2
 import random
 import numpy as np
 
+#----------Preprocessing of training and validation dataset----------
+
 labels_path = 'C:/Users/Usuario/OneDrive/Escritorio/Tesis/Datasets/AIDA_HEp-2_DB_publico/AIDA_HEp-2_GroundTruth.xlsx'
 images_path = 'C:/Users/Usuario/OneDrive/Escritorio/Tesis/Datasets/AIDA_HEp-2_DB_publico/aida_project_database'
 
@@ -39,7 +41,7 @@ np.savetxt('labels.csv', labels, fmt ='%s', delimiter = ',')
 images_compressed = np.asarray(images_list)
 np.savez_compressed('images.npz', images_compressed)
 
-#-----------Obtener la cantidad de labels-----------
+#----------Get all labels----------
 # aux = ''
 # patterns = {}
 # for pattern in labels_list:
@@ -50,3 +52,5 @@ np.savez_compressed('images.npz', images_compressed)
 #         continue
 # #print(patterns)
 # print('Numero de patrones en el dataset: ', len(patterns))
+
+#----------Preprocessing of test dataset----------
