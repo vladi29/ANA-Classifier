@@ -34,16 +34,21 @@ images_list = []
 labels_list = []
 names_list = []
 
-for i in range(0, 6):
-    A = random.randint(0, 2079)
-    images_list.append(images[A])
-    labels_list.append(labels[A])
-    names_list.appenf(names[A])
-
-for i in range(0,6):
-    plt.subplot(2,3, i+1)
-    imagen = images_list[i]
-    print("Label: ", labels_list[i])
-    print("Image name: ", names_list[i])
-    plt.imshow(imagen)
+print('Name: ', names[0])
+print('Class: ', labels[0])
+plt.imshow(images[0])
 plt.show()
+
+# for i in range(0, 6):
+#     A = random.randint(0, 2079)
+#     images_list.append(images[A])
+#     labels_list.append(labels[A])
+#     names_list.append(names[A])
+
+# for i in range(0,6):
+#     plt.subplot(2,3, i+1)
+#     imagen = images_list[i]
+#     print("Label: ", labels_list[i])
+#     print("Image name: ", names_list[i])
+#     plt.imshow(imagen)
+# plt.show()
