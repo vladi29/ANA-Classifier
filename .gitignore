@@ -1,1 +1,4 @@
 AIDA_HEp-2_GroundTruth.xls
+labels.csv
+shuffled_images.csv
+images.npz
