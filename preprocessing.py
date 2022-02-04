@@ -38,8 +38,13 @@ print('Tiempo de preprocesado de las images:', final_time/60)
 
 labels = np.asarray(labels_list)
 np.savetxt('labels.csv', labels, fmt ='%s', delimiter = ',')
+
+names = np.asarray(images)
+np.savetxt('names.csv', names, fmt ='%s', delimiter = ',')
+
 images_compressed = np.asarray(images_list)
 np.savez_compressed('images.npz', images_compressed)
+
 
 #----------Get all labels----------
 # aux = ''
