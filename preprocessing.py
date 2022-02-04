@@ -16,8 +16,7 @@ labels_path = 'C:/Users/Usuario/OneDrive/Escritorio/Tesis/Datasets/AIDA_HEp-2_DB
 images_path = 'C:/Users/Usuario/OneDrive/Escritorio/Tesis/Datasets/AIDA_HEp-2_DB_publico/aida_project_database'
 
 df = pd.read_excel(labels_path, header = 0)
-shuffled_df = df.sample(frac = 1)
-shuffled_df.reset_index(drop = True, inplace = True)
+shuffled_df = df.sample(frac = 1).reset_index(drop = True)
 shuffled_df.to_excel('shuffled_images.xlsx')
 
 data = pd.read_excel('shuffled_images.xlsx')
