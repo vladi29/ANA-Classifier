@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 raw_url= "https://www.anapatterns.org/"
-patterns = range(0,5)
+patterns = range(0,4)
 for pattern in patterns:
     images_url = "https://www.anapatterns.org/view_pattern.php?pattern={}".format(pattern)
     r = requests.get(images_url)
