@@ -21,14 +21,14 @@ shuffled_df.to_excel('shuffled_images.xlsx')
 
 data = pd.read_excel('shuffled_images.xlsx')
 labels_list = data['StainingPatterns'].values.tolist()
-images = data['ImageFileName'].values.tolist()
+images = data['ImageFileName'].values.tolist().lower()
 
 start_time = time.time()
 images_list = []
 for image in images:
-    print(image)
     image_path = images_path + '/' + image
     image = cv2.imread(image_path)
+    #image = image[:,:,1]   #Usamos unicamente el canal verde de de cada imagen segun reportan en [2]
     image = (image/255).astype('float32')
     image = cv2.resize(image, (100, 75))
     images_list.append(image)
