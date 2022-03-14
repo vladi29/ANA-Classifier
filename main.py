@@ -2,7 +2,7 @@
 # Trabajo final de grado: Clasificador de patrones ANA
 # Vladimir Alfaro - 1510023
 
-# Creacion, entrenamiento, validacion y prueba de la red
+# Creacion, entrenamiento y prueba de la red
 
 import torch.nn as nn
 import torch.nn.functional as F
