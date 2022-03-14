@@ -18,17 +18,17 @@ import os
 #----------Paths----------
 
 labels_path = 'labels.csv'
-images_path = 'images.npz'
 names_path = 'names.csv'
+images_path = 'images.npz'
 
 labels = pd.read_csv(labels_path, header = None)
 labels = labels.values.tolist()
 
-images = np.load(images_path)
-images = images['arr_0']
-
 names = pd.read_csv(names_path, header = None)
 names = names.values.tolist()
+
+images = np.load(images_path)
+images = images['arr_0']
 
 images_list = []
 labels_list = []
